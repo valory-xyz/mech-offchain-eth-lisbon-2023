@@ -1,8 +1,8 @@
 {
     "dev": {
-        "service/valory/mech_neon/0.1.0": "bafybeifszpijirxfz24a7xwmuvknx2lll7edrmng76tazm4blsuhhqhbm4",
-        "service/valory/mech_zkevm/0.1.0": "bafybeica475exidh7vdau5wfmvvdsugncihw7vd4yguygojssx4qgbo4ge",
-        "service/valory/mech_gnosis/0.1.0": "bafybeife5d74eyscpsy4ab4yiz3ygq3znb7z2wu245nccg5m66q5ovcnj4"
+        "service/valory/mech_neon/0.1.0": "bafybeibg26f2igk5vmf2tzf746qixiaz5swr6iotgc7ov2bgfxy5kt2i6u",
+        "service/valory/mech_zkevm/0.1.0": "bafybeicno25qs32ugz3egtnzryxc7v4afh5kbdkukgikau3kt7g5zh74iy",
+        "service/valory/mech_gnosis/0.1.0": "bafybeiekbtzoiabbbbkuwmogonvedmyhrmaf5ibnm6jlcolz5gcygtk5ee"
     },
     "third_party": {
         "connection/valory/websocket_client/0.1.0": "bafybeia3lo6hyhom2ht56gzgkv4gdsul5s4qoelljyks2wrcfvx5dtvsiq",
