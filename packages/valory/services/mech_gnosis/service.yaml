@@ -5,10 +5,10 @@ description: A decentralised task execution engine on gnosis.
 aea_version: '>=1.0.0, <2.0.0'
 license: Apache-2.0
 fingerprint:
-  README.md: bafybeif7ia4jdlazy6745ke2k2x5yoqlwsgwr6sbztbgqtwvs3ndm2p7ba
+  README.md: bafybeig3kt3lkfhl7uevh6qphbubskpqut3qhboxtgyfd527xzwbeljob4
 fingerprint_ignore_patterns: []
 agent: valory/mech:0.1.0:bafybeiavw5tpy33gu5f6xcggjy2sjewpvlcvzkivn3xk7bo32wefua7w7a
-number_of_agents:
+number_of_agents: 1
 deployment:
   agent:
     ports:
@@ -28,8 +28,8 @@ type: skill
         use_polling: ${USE_POLLING:bool:false}
         service_registry_address: ${SERVICE_REGISTRY_ADDRESS:str:0x0000000000000000000000000000000000000000}
         setup:
-          all_participants: ${ALL_PARTICIPANTS:list:[]}
-          safe_contract_address: ${SAFE_CONTRACT_ADDRESS:str:0x0000000000000000000000000000000000000000}
+          all_participants: ${ALL_PARTICIPANTS:list:["0x87b85ed1E049D2023CF51f92C04103CCD4107c9c"]}
+          safe_contract_address: ${SAFE_CONTRACT_ADDRESS:str:0x71126f6eeC5eCDC663e12E8f74FB2021a6e8A7d2}
           consensus_threshold: ${CONSENSUS_THRESHOLD:int:null}
         share_tm_config_on_startup: ${USE_ACN:bool:false}
         tendermint_com_url: ${TENDERMINT_COM_URL:str:http://localhost:8080}
@@ -37,16 +37,16 @@ type: skill
         tendermint_p2p_url: ${TM_P2P_ENDPOINT_NODE_0:str:node0:26656}
         termination_sleep: ${TERMINATION_SLEEP:int:900}
         use_termination: ${USE_TERMINATION:bool:false}
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xFf82123dFB52ab75C417195c5fDB87630145ae81","0x77af31De935740567Cf4fF1986D04B2c964A786a"]}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0x1847f93501704F9AA67FE8Af5de7e999af5d0970"]}
         reset_period_count: ${RESET_PERIOD_COUNT:int:1000}
         use_slashing: ${USE_SLASHING:bool:false}
         slash_cooldown_hours: ${SLASH_COOLDOWN_HOURS:int:3}
         slash_threshold_amount: ${SLASH_THRESHOLD_AMOUNT:int:10000000000000000}
         light_slash_unit_amount: ${LIGHT_SLASH_UNIT_AMOUNT:int:5000000000000000}
         serious_slash_unit_amount: ${SERIOUS_SLASH_UNIT_AMOUNT:int:8000000000000000}
-        agent_registry_address: ${AGENT_REGISTRY_ADDRESS:str:0xE49CB081e8d96920C38aA7AB90cb0294ab4Bc8EA}
+        agent_registry_address: ${AGENT_REGISTRY_ADDRESS:str:0x84B4DA67B37B1EA1dea9c7044042C1d2297b80a0}
         agent_id: ${AGENT_ID:int:1}
-        metadata_hash: ${METADATA_HASH:str:f01701220caa53607238e340da63b296acab232c18a48e954f0af6ff2b835b2d93f1962f0}
+        metadata_hash: ${METADATA_HASH:str:f017012208587c41db9485a2a85ced3c7062090eac227d85d66b5a7efeff9471277638db8}
 ---
 public_id: valory/task_execution:0.1.0
 type: skill
@@ -54,13 +54,14 @@ type: skill
   models:
     params:
       args:
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xFf82123dFB52ab75C417195c5fDB87630145ae81","0x77af31De935740567Cf4fF1986D04B2c964A786a"]}
-        task_deadline: ${TASK_DEADLINE:float:240.0}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0x1847f93501704F9AA67FE8Af5de7e999af5d0970"]}
+        task_deadline: ${TASK_DEADLINE:float:3600.0}
         file_hash_to_tools_json: ${FILE_HASH_TO_TOOLS:list:[]}
         api_keys_json: ${API_KEYS:list:[]}
         polling_interval: ${POLLING_INTERVAL:float:30.0}
         agent_index: ${AGENT_INDEX_0:int:0}
         num_agents: ${NUM_AGENTS:int:1}
+        from_block_range: ${FROM_BLOCK_RANGE:int:5000}
 ---
 public_id: valory/ledger:0.19.0
 type: connection
@@ -68,7 +69,10 @@ type: connection
   config:
     ledger_apis:
       ethereum:
-        address: ${GNOSIS_RPC:str:http://host.docker.internal:8545}
+        address: ${GNOSIS_RPC_0:str:http://host.docker.internal:8545}
+        chain_id: 100
+      gnosis:
+        address: ${GNOSIS_RPC_1:str:http://host.docker.internal:8545}
         chain_id: 100
 ---
 public_id: valory/p2p_libp2p_client:0.1.0
@@ -109,4 +113,3 @@ type: skill
     params:
       args:
         use_polling: ${USE_POLLING:str:false}
-
