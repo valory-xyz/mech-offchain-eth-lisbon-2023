@@ -54,7 +54,7 @@ type: skill
   models:
     params:
       args:
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xFf82123dFB52ab75C417195c5fDB87630145ae81","0x77af31De935740567Cf4fF1986D04B2c964A786a"]}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0x101B799648efa84DdBFd7C64Ec708107317d62e4"]}
         task_deadline: ${TASK_DEADLINE:float:240.0}
         file_hash_to_tools_json: ${FILE_HASH_TO_TOOLS:list:[]}
         api_keys_json: ${API_KEYS:list:[]}
@@ -68,6 +68,9 @@ type: connection
   config:
     ledger_apis:
       ethereum:
+        address: ${POLYGON_ZK_RPC:str:https://zkevm-rpc.com}
+        chain_id: 1101
+      gnosis:
         address: ${POLYGON_ZK_RPC:str:https://zkevm-rpc.com}
         chain_id: 1101
 ---

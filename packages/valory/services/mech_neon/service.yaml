@@ -54,7 +54,7 @@ type: skill
   models:
     params:
       args:
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xFf82123dFB52ab75C417195c5fDB87630145ae81","0x77af31De935740567Cf4fF1986D04B2c964A786a"]}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xd81964075e24b6f8e4e1569c5f08e6697d9f2d25"]}
         task_deadline: ${TASK_DEADLINE:float:240.0}
         file_hash_to_tools_json: ${FILE_HASH_TO_TOOLS:list:[]}
         api_keys_json: ${API_KEYS:list:[]}
