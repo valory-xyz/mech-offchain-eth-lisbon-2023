@@ -44,3 +44,6 @@ backup_mech/
 /packages/valory/protocols/
 /packages/valory/skills/
 /mech_gnosis/
+/mech_neon/
+/mech_zkevm/
+/deployments/
