@@ -60,7 +60,8 @@ spacy = "==3.7.2"
 pandas = "==2.1.1"
 tiktoken = "==0.5.1"
 python-dateutil = "==2.8.2"
-
+replicate = "==0.15.7"
+moviepy = "==1.0.3"
 
 [tool.poetry.group.dev.dependencies.tomte]
 version = "==0.2.12"
