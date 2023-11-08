@@ -37,6 +37,7 @@ def get_openai_response(user_input: str, engine: str) -> Dict[str, Any]:
                    "  \"soundtrack_prompt\": \"[Insert soundtrack prompt here]\",\n"
                    "  \"video_clip_prompt\": \"[Insert video clip prompt here]\"\n"
                    "}\n\n"
+                    "Make sure the response can be decoded using json.loads()\n"
                    "EXAMPLE USER INPUT:\n"
                    "This is an example desired response for the user input: \"A group of tiny robots walking down a mountain\"\n\n"
                    "{\n"
@@ -207,4 +208,4 @@ def run(**kwargs) -> Tuple[str, Optional[str], Optional[Dict[str, Any]]]:
         # todo
         "image": "bafybeig64atqaladigoc3ds4arltdu63wkdrk3gesjfvnfdmz35amv7faq",
     }
-    return json.dumps(body), "test", None
+    return json.dumps(body), prompt, None
