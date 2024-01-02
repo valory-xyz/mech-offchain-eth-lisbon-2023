@@ -7,13 +7,18 @@ license: Apache-2.0
 fingerprint:
   README.md: bafybeih2dkhy7kyetv7b7otnkysscyyx4735n7nmzrhgavuyqqsxl6wsru
 fingerprint_ignore_patterns: []
-agent: valory/mech:0.1.0:bafybeiavw5tpy33gu5f6xcggjy2sjewpvlcvzkivn3xk7bo32wefua7w7a
+agent: valory/mech:0.1.0:bafybeiflfz2kcy2adgjtx3ad47u5axbkjjcej56xladjkoa3i4ufpqdyua
 number_of_agents: 1
 deployment:
   agent:
     ports:
       0:
         8000: 8000
+dependencies:
+  replicate:
+    version: ==0.15.7
+  moviepy:
+    version: ==1.0.3
 ---
 public_id: valory/mech_abci:0.1.0
 type: skill
