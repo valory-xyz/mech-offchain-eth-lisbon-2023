@@ -7,13 +7,18 @@ license: Apache-2.0
 fingerprint:
   README.md: bafybeih2dkhy7kyetv7b7otnkysscyyx4735n7nmzrhgavuyqqsxl6wsru
 fingerprint_ignore_patterns: []
-agent: valory/mech:0.1.0:bafybeiavw5tpy33gu5f6xcggjy2sjewpvlcvzkivn3xk7bo32wefua7w7a
+agent: valory/mech:0.1.0:bafybeiflfz2kcy2adgjtx3ad47u5axbkjjcej56xladjkoa3i4ufpqdyua
 number_of_agents: 1
 deployment:
   agent:
     ports:
       0:
         8000: 8000
+dependencies:
+  replicate:
+    version: ==0.15.7
+  moviepy:
+    version: ==1.0.3
 ---
 public_id: valory/mech_abci:0.1.0
 type: skill
@@ -37,7 +42,7 @@ type: skill
         tendermint_p2p_url: ${TM_P2P_ENDPOINT_NODE_0:str:node0:26656}
         termination_sleep: ${TERMINATION_SLEEP:int:900}
         use_termination: ${USE_TERMINATION:bool:false}
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xd81964075e24b6f8e4e1569c5f08e6697d9f2d25"]}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xd81964075e24b6f8E4E1569c5F08E6697d9f2d25"]}
         reset_period_count: ${RESET_PERIOD_COUNT:int:1000}
         use_slashing: ${USE_SLASHING:bool:false}
         slash_cooldown_hours: ${SLASH_COOLDOWN_HOURS:int:3}
@@ -54,7 +59,7 @@ type: skill
   models:
     params:
       args:
-        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xd81964075e24b6f8e4e1569c5f08e6697d9f2d25"]}
+        agent_mech_contract_addresses: ${AGENT_MECH_CONTRACT_ADDRESSES:list:["0xd81964075e24b6f8E4E1569c5F08E6697d9f2d25"]}
         task_deadline: ${TASK_DEADLINE:float:240.0}
         file_hash_to_tools_json: ${FILE_HASH_TO_TOOLS:list:[]}
         api_keys_json: ${API_KEYS:list:[]}
